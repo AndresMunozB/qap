@@ -25,5 +25,3 @@ def neighbor(solution):
     new_solution.extend(aux)
     new_solution.extend(solution[j+1:])
     return new_solution
-
-

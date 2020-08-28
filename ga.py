@@ -1,27 +1,15 @@
 import qap
-from random import shuffle, randint
+from random import shuffle, randint, random
 
-def generate_population(size, n):
+def generate_population(size_population, size_solution):
     population = []
-    while size >= 0:
-        solution = qap.random_solution(n)
+    while size_population >= 0:
+        solution = qap.random_solution(size_solution)
         population.append(solution)
-        size-=1
+        size_population-=1
     return population
 
-def roulette_selection(population, d, f):
-    n = len(population)
-    total_fitness = 0
-    probabilities = []
-    for i in range(n):
-        total_fitness += qap.objective_function(population[i], d, f)
-    
-    for i in range(n):
-        probability = qap.objective_function(population[i], d, f)/total_fitness
-        probabilities.append(probability)
-    return probabilities
-
-def tournament_selection(tournament_size, tournament_times, population_size, population, d, f):
+def tournament_selection(tournament_size, tournament_times, population, d, f):
     """ 
     tournament_size: k Individuos seleccionados por torneo
     tournament_times: mu Cuantas veces se realiza el torneo, que indica 
@@ -32,7 +20,7 @@ def tournament_selection(tournament_size, tournament_times, population_size, pop
         # Seleccionados del torneo
         selected_individuals = []
         while(tournament_size>=0):
-            random_index = randint(0, population_size - 1)
+            random_index = randint(0, len(population) - 1)
             selected_individuals.append(population[random_index])
             tournament_size-=1
         
@@ -47,3 +35,14 @@ def tournament_selection(tournament_size, tournament_times, population_size, pop
         new_population.append(selected_individuals[best_index])
         tournament_times-=1
     return new_population
+
+def mutation(solution, probability):
+    chance = random(0, 1)
+    if chance <= probability:
+        i = randint(0, len(solution))
+        j = randint(0, len(solution))
+        x = solution[i]
+        y = solution[j]
+        solution[i] = y
+        solution[j] = x
+    return solution

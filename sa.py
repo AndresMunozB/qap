@@ -2,6 +2,7 @@ from random import random
 import numpy as np
 import qap
 import matplotlib.pyplot as plt
+from time import time
 
 def acceptance_probability(delta, temperature):
     """ Calculate de acceptance probability"""
@@ -26,9 +27,9 @@ def simulated_annealing(initial_temperature,
                         d, 
                         f):
     """ Simulated annealing for traveling salesman problem (TSP)"""
+    start_time = time()
     current_temperature = initial_temperature
-    #initial_solution = qap.random_solution(d.shape[0])
-    initial_solution = [1,3,6,7,0,2,8,11,10,4,5,9]
+    initial_solution = qap.random_solution(d.shape[0])
     current_solution = initial_solution.copy()
     best_solution = initial_solution.copy()
     current_objective = qap.objective_function(best_solution, d, f)
@@ -38,6 +39,7 @@ def simulated_annealing(initial_temperature,
     objectives_list = [current_objective]
     best_objectives_list =  [current_objective]
     probabilities_list = []
+    temperature_list = [current_temperature]
 
     while current_temperature > final_temperature:
         i = 0
@@ -46,8 +48,6 @@ def simulated_annealing(initial_temperature,
             candidate_objective = qap.objective_function(candidate_solution, d, f)
             if debug:
                 print("Step #{:>4}/{:>4} : T = {:10.2f}, cost = {:12.2f}, new_cost = {:12.2f} ...".format(i, max_iterations, current_temperature, current_objective, candidate_objective))
-            
-
             delta = candidate_objective - current_objective     
             if delta < 0:
                 current_solution = candidate_solution.copy()
@@ -63,9 +63,11 @@ def simulated_annealing(initial_temperature,
                     current_objective = candidate_objective
             i = i + 1
             best_objectives_list.append(best_objective)
-            objectives_list.append(current_objective) 
+            objectives_list.append(current_objective)
+            temperature_list.append(current_temperature) 
         current_temperature = cooling(current_temperature,initial_temperature,cooling_mode,i, alpha, beta)
-    return objectives_list, best_objectives_list, probabilities_list, best_objective
+    elapsed_time = time() - start_time
+    return objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time
 
 def graph(objetives_list, best_objetives_list, probabilities_list, best_objetive):
     plt.figure(1)

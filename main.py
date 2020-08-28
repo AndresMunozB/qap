@@ -1,6 +1,7 @@
 import numpy as np
+import test
+"""
 import sa
-
 initial_temperature = 2000
 final_temperature = 0.01
 max_iterations = 1000
@@ -23,4 +24,10 @@ objetives_list, best_objetives_list, probabilities_list, best_objetive = sa.simu
 
 
 sa.graph(objetives_list, best_objetives_list, probabilities_list, best_objetive)
-sa.plt.show()
+sa.plt.show()"""
+iterations = 15
+test.run_tests("test/test_chr12a",iterations)
+test.run_tests("test/test_esc64a",iterations)
+test.run_tests("test/test_tai100a",iterations)
+
+

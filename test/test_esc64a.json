@@ -1,0 +1,95 @@
+[
+    {
+        "NAMETEST": "esc64a_base",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 25,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.85,
+        "BETA": 1000,
+        "DEBUG": false
+    },
+
+
+    {
+        "NAMETEST": "esc64a_iterations_10",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 10,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.85,
+        "BETA": 1000,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "esc64a_iterations_50",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 50,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.85,
+        "BETA": 1000,
+        "DEBUG": false
+    },
+
+
+
+    {
+        "NAMETEST": "esc64a_geometric_75",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 25,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.75,
+        "BETA": 1000,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "esc64a_geometric_95",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 25,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.95,
+        "BETA": 1000,
+        "DEBUG": false
+    },
+
+
+
+    {
+        "NAMETEST": "esc64a_temperature_10",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 25,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.85,
+        "BETA": 1000,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "esc64a_temperature_05",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 7753490 ,
+        "FINAL_TEMPERATURE": 0.1,
+        "MAX_ITERATIONS": 25,
+        "COOLING_MODE": "GEO",
+        "ALPHA": 0.85,
+        "BETA": 1000,
+        "DEBUG": false
+    }
+    
+]

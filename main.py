@@ -36,6 +36,6 @@ f = np.loadtxt('data/FChr12a.txt')
 size_population = 12
 size_solution = 12
 population = ga.generate_population(size_population,size_solution)
-new_population = ga.roulette_selection(12,population,d,f)
+
 print(new_population)
 

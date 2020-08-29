@@ -50,9 +50,6 @@ def order_one_crossover(parent_1, parent_2):
     j = randint(0, len(parent_1)-1)
     if i > j:
         i, j = j, i
-
-    print(i)
-    print(j)
     offspring_1 = [-1]*len(parent_1)
     offspring_2 = [-1]*len(parent_1)
     selected_1 = parent_1[i:j+1]
@@ -61,9 +58,7 @@ def order_one_crossover(parent_1, parent_2):
     offspring_2[i:j+1] = selected_2
     
     not_selected_1 = list(set(parent_2)- set(selected_1))
-    print(not_selected_1)
     not_selected_2 = list(set(parent_1)- set(selected_2))
-    print(not_selected_2)
 
     index = 0
     for k in range(i):
@@ -73,7 +68,8 @@ def order_one_crossover(parent_1, parent_2):
     for k in range(j+1, len(parent_1)):
         offspring_1[k] = not_selected_1[index]
         offspring_2[k] = not_selected_2[index]
-        index+=1  
+        index+=1
+
     return offspring_1, offspring_2
 
 

@@ -26,12 +26,12 @@ objetives_list, best_objetives_list, probabilities_list, best_objetive = sa.simu
 
 sa.graph(objetives_list, best_objetives_list, probabilities_list, best_objetive)
 sa.plt.show()"""
-iterations = 15
-#test.run_tests("test/test_chr12a",iterations)
-#test.run_tests("test/test_esc64a",iterations)
-#test.run_tests("test/test_tai100a",iterations)
+iterations = 30
+#test.run_tests_sa("test/test_chr12a",iterations)
+#test.run_tests_sa("test/test_esc64a",iterations)
+test.run_tests_sa("test/test_kra32",iterations)
 
-d = np.loadtxt('data/DChr12a.txt')
+"""d = np.loadtxt('data/DChr12a.txt')
 f = np.loadtxt('data/FChr12a.txt')
 size_population = 12
 size_solution = 12
@@ -56,3 +56,4 @@ best_objective_list = ga.evolutive_algorithm(population_size,
                                             d, f)
 print(best_objective_list)
 
+"""

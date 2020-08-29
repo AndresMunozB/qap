@@ -26,7 +26,7 @@ def results_to_json(objetives_list, best_objetives_list, probabilities_list, tem
     }
     return data
 
-def run_tests(name_test, iterations):
+def run_tests_sa(name_test, iterations):
     tests = load_json(name_test)
     count_test = 1
     for test in tests:
@@ -44,5 +44,10 @@ def run_tests(name_test, iterations):
                                                                                                         d,
                                                                                                         f)
             results_json = results_to_json(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time)
-            save_results(results_json,'result/' + test['NAMETEST']+ '_' + str(i) + '.json')
+            save_results(results_json,'result/' + test['NAMETEST']+ '_SA_' + str(i) + '.json')
         print('Test: '+ test['NAMETEST'] + ' finalizado. ' + str(count_test) + '/7')
+
+def run_tests_ga(name_test,iterations):
+    tests = load_json(name_test)
+    count_test = 1
+    return True

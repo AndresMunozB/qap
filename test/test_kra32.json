@@ -1,9 +1,9 @@
 [
     {
-        "NAMETEST": "tai100a_base",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_base",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 450000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 25,
         "COOLING_MODE": "GEO",
@@ -14,10 +14,10 @@
 
 
     {
-        "NAMETEST": "tai100a_iterations_10",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_iterations_10",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 450000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 10,
         "COOLING_MODE": "GEO",
@@ -26,10 +26,10 @@
         "DEBUG": false
     },
     {
-        "NAMETEST": "tai100a_iterations_50",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_iterations_50",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 450000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 50,
         "COOLING_MODE": "GEO",
@@ -41,10 +41,10 @@
 
 
     {
-        "NAMETEST": "tai100a_geometric_75",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_geometric_75",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 450000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 25,
         "COOLING_MODE": "GEO",
@@ -53,14 +53,14 @@
         "DEBUG": false
     },
     {
-        "NAMETEST": "tai100a_geometric_95",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_geometric_99",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 450000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 25,
         "COOLING_MODE": "GEO",
-        "ALPHA": 0.95,
+        "ALPHA": 0.99,
         "BETA": 1000,
         "DEBUG": false
     },
@@ -68,10 +68,10 @@
 
 
     {
-        "NAMETEST": "tai100a_temperature_10",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_temperature_10",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 1500000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 25,
         "COOLING_MODE": "GEO",
@@ -80,10 +80,10 @@
         "DEBUG": false
     },
     {
-        "NAMETEST": "tai100a_temperature_05",
-        "DMATRIX": "data/Dtai100a.txt",
-        "FMATRIX": "data/Ftai100a.txt",
-        "INITIAL_TEMPERATURE": 7753490 ,
+        "NAMETEST": "kra32_temperature_05",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 75000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 25,
         "COOLING_MODE": "GEO",

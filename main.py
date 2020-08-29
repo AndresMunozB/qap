@@ -52,9 +52,13 @@ best_objective_list, average_objectives_list, best_solution, best_objective, ela
 #TESTS
 
 iterations = 30
-test.run_tests_ga("test/test_ga_chr12a",iterations)
+#EVOLUTIVE ALGORITHM
+#test.run_tests_ga("test/test_ga_chr12a",iterations)
+#test.run_tests_ga("test/test_ga_chr12a",iterations)
 test.run_tests_ga("test/test_ga_esc64a",iterations)
-test.run_tests_ga("test/test_ga_chr12a",iterations)
+
+
+#SIMULATED ANNEALING
 #test.run_tests_sa("test/test_sa_chr12a",iterations)
 #test.run_tests_sa("test/test_sa_kra32",iterations)
 #test.run_tests_sa("test/test_sa_esc64a",iterations)

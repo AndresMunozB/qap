@@ -14,10 +14,10 @@
 
 
     {
-        "NAMETEST": "chr12a_population_25",
+        "NAMETEST": "chr12a_population_30",
         "DMATRIX": "data/DChr12a.txt",
         "FMATRIX": "data/FChr12a.txt",
-        "POPULATION_SIZE": 25,
+        "POPULATION_SIZE": 30,
         "GENERATIONS": 20,
         "TOURNAMENT_SIZE": 20,
         "TOURNAMENT_TIMES": 50,
@@ -48,7 +48,7 @@
         "TOURNAMENT_SIZE": 20,
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
-        "MUTATION_PROBABILITY": 0.5,
+        "MUTATION_PROBABILITY": 0.1,
         "DEBUG": false
     },
     {
@@ -60,7 +60,7 @@
         "TOURNAMENT_SIZE": 20,
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
-        "MUTATION_PROBABILITY": 0.2,
+        "MUTATION_PROBABILITY": 0.5,
         "DEBUG": true
     },
 
@@ -69,7 +69,7 @@
         "DMATRIX": "data/DChr12a.txt",
         "FMATRIX": "data/FChr12a.txt",
         "POPULATION_SIZE": 50,
-        "GENERATIONS": 20,
+        "GENERATIONS": 10,
         "TOURNAMENT_SIZE": 20,
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,

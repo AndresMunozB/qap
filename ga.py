@@ -1,12 +1,12 @@
 import qap
 from random import shuffle, randint, random
 
-def generate_population(size_population, size_solution):
+def generate_population(population_size, size_solution):
     population = []
-    while size_population >= 0:
+    while population_size >= 0:
         solution = qap.random_solution(size_solution)
         population.append(solution)
-        size_population-=1
+        population_size-=1
     return population
 
 def tournament_selection(tournament_size, tournament_times, population, d, f):
@@ -33,18 +33,23 @@ def tournament_selection(tournament_size, tournament_times, population, d, f):
         new_population.append(selected_individuals[best_index])
     return new_population
 
-def mutation(solution, probability):
-    chance = random()
+def swap(solution):
     result = solution.copy()
-    if chance <= probability: 
-        i = randint(0, len(result)-1) 
-        j = randint(0, len(result)-1) 
-        x = result[i] 
-        y = result[j]
-        result[i] = y
-        result[j] = x
+    i = randint(0, len(result)-1) 
+    j = randint(0, len(result)-1) 
+    x = result[i] 
+    y = result[j]
+    result[i] = y
+    result[j] = x
     return result
 
+def mutation(population, probability):
+    new_population = population.copy()
+    for i in range(len(population)):
+        if random() <= probability: 
+            new_population[i] = swap(new_population[i])
+    return new_population
+    
 def order_one_crossover(parent_1, parent_2):
     i = randint(0, len(parent_1)-1)
     j = randint(0, len(parent_1)-1)
@@ -71,5 +76,43 @@ def order_one_crossover(parent_1, parent_2):
         index+=1
 
     return offspring_1, offspring_2
+
+def reproduction(selected_population, reproduction_times):
+    new_population = []
+    for _ in range(reproduction_times):
+        i = randint(0, len(selected_population)-1)
+        j = randint(0, len(selected_population)-1)
+        offspring_1, offspring_2 = order_one_crossover(selected_population[i], selected_population[j])
+        new_population.append(offspring_1)
+        new_population.append(offspring_2)
+    return new_population
+
+def k_best(population,k,d,f):
+    objects = []
+    for i in range(len(population)):
+        objects.append({"solution": population[i], "objective_value": qap.objective_function(population[i],d,f)})
+    objects.sort(key=lambda x: x['objective_value'])
+    return [o['solution'] for o in objects[0:k]]
+
+def replace(population, new_population,population_size,d,f,):
+    result = []
+    i = population_size * 0.3
+    j = population_size * 0.7
+    result.extend(k_best(population,int(i),d,f))
+    result.extend(k_best(new_population,int(j),d,f))
+    return result
+
+def evolutive_algorithm(population_size, generations, tournament_size, tournament_times,reproduction_times, mutation_probability, d, f):
+    population = generate_population(population_size, d.shape[0])
+    best_objective_list = [] # qap.objective_function(k_best(population,1,d,f),d,f)
+    for _ in range(generations):
+        new_population = tournament_selection(tournament_size,tournament_times,population,d,f) #tournament_time deberia ser 50
+        new_population = reproduction(new_population,reproduction_times) # si reproduction_times es 25 entonces new_population es 50
+        new_population = mutation(new_population,mutation_probability) # probabilidad del 10% aprox
+        population =  replace(population,new_population,population_size,d,f) # 50% mejores de generacion anterior y nueva
+        best_solution = k_best(population,1,d,f)[0]
+        best_objective_list.append(qap.objective_function(best_solution,d,f))
+    return best_objective_list
+
 
 

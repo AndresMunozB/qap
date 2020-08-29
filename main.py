@@ -27,8 +27,8 @@ objetives_list, best_objetives_list, probabilities_list, best_objetive = sa.simu
 sa.graph(objetives_list, best_objetives_list, probabilities_list, best_objetive)
 sa.plt.show()"""
 iterations = 30
-#test.run_tests_sa("test/test_chr12a",iterations)
-#test.run_tests_sa("test/test_esc64a",iterations)
+test.run_tests_sa("test/test_chr12a",iterations)
+test.run_tests_sa("test/test_esc64a",iterations)
 test.run_tests_sa("test/test_kra32",iterations)
 
 """d = np.loadtxt('data/DChr12a.txt')

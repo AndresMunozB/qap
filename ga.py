@@ -1,6 +1,6 @@
 import qap
 from random import shuffle, randint, random
-
+from time import time
 def generate_population(population_size, size_solution):
     population = []
     while population_size >= 0:
@@ -102,17 +102,53 @@ def replace(population, new_population,population_size,d,f,):
     result.extend(k_best(new_population,int(j),d,f))
     return result
 
-def evolutive_algorithm(population_size, generations, tournament_size, tournament_times,reproduction_times, mutation_probability, d, f):
+def average_objective(population,d,f):
+    sum = 0
+    for i in range(len(population)):
+        sum += qap.objective_function(population[i],d,f)
+    return sum/len(population)
+
+
+def evolutive_algorithm(population_size, 
+                        generations,
+                        tournament_size,
+                        tournament_times,
+                        reproduction_times,
+                        mutation_probability,
+                        debug,
+                        d, f):
+    start_time = time()
     population = generate_population(population_size, d.shape[0])
-    best_objective_list = [] # qap.objective_function(k_best(population,1,d,f),d,f)
-    for _ in range(generations):
+    
+    best_solution = k_best(population,1,d,f)[0]
+    best_objective = qap.objective_function(best_solution,d,f)
+
+    #memory
+    average_objectives_list = [average_objective(population,d,f)]
+    best_objective_list =  [best_objective]
+
+
+    for i in range(generations):
         new_population = tournament_selection(tournament_size,tournament_times,population,d,f) #tournament_time deberia ser 50
         new_population = reproduction(new_population,reproduction_times) # si reproduction_times es 25 entonces new_population es 50
         new_population = mutation(new_population,mutation_probability) # probabilidad del 10% aprox
         population =  replace(population,new_population,population_size,d,f) # 50% mejores de generacion anterior y nueva
-        best_solution = k_best(population,1,d,f)[0]
-        best_objective_list.append(qap.objective_function(best_solution,d,f))
-    return best_objective_list
+        
+        candidate_solution = k_best(population,1,d,f)[0]
+        candidate_objective = qap.objective_function(candidate_solution,d,f)
+
+        if debug:
+                print("Generation #{:>4}/{:>4} : best_objective = {:12.2f}, new_objective = {:12.2f} ...".format(i+1, generations, best_objective, candidate_objective))
+
+        if candidate_objective < best_objective:
+            best_solution = candidate_solution
+            best_objective = candidate_objective
+        
+        average_objectives_list.append(average_objective(population,d,f))
+        best_objective_list.append(best_objective)
+
+    elapsed_time = time() - start_time
+    return best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time
 
 
 

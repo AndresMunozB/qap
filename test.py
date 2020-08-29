@@ -56,7 +56,7 @@ def run_tests_sa(name_test, iterations):
                                                                                                         d,
                                                                                                         f)
             results_json = results_sa_to_json(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time)
-            save_results(results_json,'result/' + test['NAMETEST']+ '_SA_' + str(i) + '.json')
+            save_results(results_json,'result/' + test['NAMETEST']+ '_sa_' + str(i).zfill(3) + '.json')
         print('   test (' + str(count_test) + '/7) '+ test['NAMETEST'] + ' finalizado. ' )
         count_test += 1
 
@@ -78,6 +78,6 @@ def run_tests_ga(name_test,iterations):
                                                                                                     test['DEBUG'],
                                                                                                     d, f)
             results_json = results_ga_to_json(best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time)
-            save_results(results_json,'result/' + test['NAMETEST']+ '_ga_' + str(i) + '.json')
+            save_results(results_json,'result/' + test['NAMETEST']+ '_ga_' + str(i).zfill(3) + '.json')
         print('   test (' + str(count_test) + '/7) '+ test['NAMETEST'] + ' finalizado. ' )
         count_test += 1

@@ -53,8 +53,8 @@ best_objective_list, average_objectives_list, best_solution, best_objective, ela
 
 iterations = 30
 #EVOLUTIVE ALGORITHM
-#test.run_tests_ga("test/test_ga_chr12a",iterations)
-#test.run_tests_ga("test/test_ga_chr12a",iterations)
+test.run_tests_ga("test/test_ga_chr12a",iterations)
+test.run_tests_ga("test/test_ga_chr12a",iterations)
 test.run_tests_ga("test/test_ga_esc64a",iterations)
 
 

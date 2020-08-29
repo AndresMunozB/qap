@@ -53,30 +53,27 @@ def order_one_crossover(parent_1, parent_2):
 
     print(i)
     print(j)
-    offspring_1 = [None]*len(parent_1)
-    offspring_2 = [None]*len(parent_1)
+    offspring_1 = [-1]*len(parent_1)
+    offspring_2 = [-1]*len(parent_1)
     selected_1 = parent_1[i:j+1]
     selected_2 = parent_2[i:j+1]
     offspring_1[i: j+1] = selected_1
     offspring_2[i:j+1] = selected_2
     
-    """for k in range(i):
-        if parent_2[k] not in selected_1:
-            offspring_1.append(parent_2[k])
-        if parent_1[k] not in selected_2:
-            offspring_2.append(parent_1[k])
+    not_selected_1 = list(set(parent_2)- set(selected_1))
+    print(not_selected_1)
+    not_selected_2 = list(set(parent_1)- set(selected_2))
+    print(not_selected_2)
 
-    for k in range(i, len(parent_1)):
-        if parent_2[k] not in offspring_1:
-            offspring_1.append(parent_2[k])
-        if parent_1[k] not in offspring_2:
-            offspring_2.append(parent_1[k])"""
-    for k in range(len(parent_1)):
-        for l in range(len(parent_1)):
-
-            if offspring_1[k] == None:
-                if parent_2[k] not in selected_1:
-                
+    index = 0
+    for k in range(i):
+        offspring_1[k] = not_selected_1[index]
+        offspring_2[k] = not_selected_2[index]
+        index+=1
+    for k in range(j+1, len(parent_1)):
+        offspring_1[k] = not_selected_1[index]
+        offspring_2[k] = not_selected_2[index]
+        index+=1  
     return offspring_1, offspring_2
 
 

@@ -29,9 +29,11 @@ def results_to_json(objetives_list, best_objetives_list, probabilities_list, tem
 def run_tests_sa(name_test, iterations):
     tests = load_json(name_test)
     count_test = 1
+    
     for test in tests:
+        print('   test (' + str(count_test) + '/7) '+ test['NAMETEST'] + ' iniciado. ' )
         for i in range(1,iterations+1):
-            print('   running test ' + test['NAMETEST'] + ' ' + str(i) + '/'+ str(iterations)+ ' ...')
+            print('      (' + str(i) + '/'+ str(iterations)+ ') running test ' + test['NAMETEST'] + ' ' + ' ...')
             d = np.loadtxt(test['DMATRIX'])
             f = np.loadtxt(test['FMATRIX'])
             objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time = sa.simulated_annealing(test['INITIAL_TEMPERATURE'], 
@@ -45,7 +47,8 @@ def run_tests_sa(name_test, iterations):
                                                                                                         f)
             results_json = results_to_json(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time)
             save_results(results_json,'result/' + test['NAMETEST']+ '_SA_' + str(i) + '.json')
-        print('Test: '+ test['NAMETEST'] + ' finalizado. ' + str(count_test) + '/7')
+        print('   test (' + str(count_test) + '/7) '+ test['NAMETEST'] + ' finalizado. ' )
+        count_test += 1
 
 def run_tests_ga(name_test,iterations):
     tests = load_json(name_test)

@@ -9,7 +9,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
-        "DEBUG": true
+        "DEBUG": false
     },
 
 
@@ -23,7 +23,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
-        "DEBUG": true
+        "DEBUG": false
     },
     {
         "NAMETEST": "esc64_population_100",
@@ -35,7 +35,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
-        "DEBUG": true
+        "DEBUG": false
     },
 
 
@@ -49,7 +49,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.1,
-        "DEBUG": true
+        "DEBUG": false
     },
     {
         "NAMETEST": "esc64_mutation_05",
@@ -61,7 +61,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.5,
-        "DEBUG": true
+        "DEBUG": false
     },
 
     {
@@ -74,7 +74,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
-        "DEBUG": true
+        "DEBUG": false
     },
     {
         "NAMETEST": "esc64_generations_40",
@@ -86,6 +86,6 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
-        "DEBUG": true
+        "DEBUG": false
     }
 ]

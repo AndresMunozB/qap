@@ -1,0 +1,91 @@
+[
+    {
+        "NAMETEST": "esc64_base",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+
+
+    {
+        "NAMETEST": "esc64_population_25",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 25,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+    {
+        "NAMETEST": "esc64_population_100",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 100,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+
+
+    {
+        "NAMETEST": "esc64_mutation_01",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.5,
+        "DEBUG": true
+    },
+    {
+        "NAMETEST": "esc64_mutation_05",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+
+    {
+        "NAMETEST": "esc64_generations_10",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+    {
+        "NAMETEST": "esc64_generations_40",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 40,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    }
+]

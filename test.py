@@ -1,6 +1,7 @@
 import json
 import numpy as np
 import sa
+import ga
 def load_json(name_json):
     """ Load configuration from json file """
     data = {}
@@ -68,16 +69,15 @@ def run_tests_ga(name_test,iterations):
             print('      (' + str(i) + '/'+ str(iterations)+ ') running test ' + test['NAMETEST'] + ' ' + ' ...')
             d = np.loadtxt(test['DMATRIX'])
             f = np.loadtxt(test['FMATRIX'])
-            objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time = sa.simulated_annealing(test['INITIAL_TEMPERATURE'], 
-                                                                                                        test['FINAL_TEMPERATURE'], 
-                                                                                                        test['MAX_ITERATIONS'], 
-                                                                                                        test['COOLING_MODE'], 
-                                                                                                        test['ALPHA'], 
-                                                                                                        test['BETA'],
-                                                                                                        test['DEBUG'], 
-                                                                                                        d,
-                                                                                                        f)
-            results_json = results_sa_to_json(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time)
-            save_results(results_json,'result/' + test['NAMETEST']+ '_SA_' + str(i) + '.json')
+            best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time = ga.evolutive_algorithm(test['POPULATION_SIZE'], 
+                                                                                                    test['GENERATIONS'], 
+                                                                                                    test['TOURNAMENT_SIZE'], 
+                                                                                                    test['TOURNAMENT_TIMES'],
+                                                                                                    test['REPRODUCTION_TIMES'], 
+                                                                                                    test['MUTATION_PROBABILITY'], 
+                                                                                                    test['DEBUG'],
+                                                                                                    d, f)
+            results_json = results_ga_to_json(best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time)
+            save_results(results_json,'result/' + test['NAMETEST']+ '_ga_' + str(i) + '.json')
         print('   test (' + str(count_test) + '/7) '+ test['NAMETEST'] + ' finalizado. ' )
         count_test += 1

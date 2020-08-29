@@ -10,5 +10,82 @@
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
         "DEBUG": false
+    },
+
+
+    {
+        "NAMETEST": "chr12a_population_25",
+        "DMATRIX": "data/DChr12a.txt",
+        "FMATRIX": "data/FChr12a.txt",
+        "POPULATION_SIZE": 25,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "chr12a_population_100",
+        "DMATRIX": "data/DChr12a.txt",
+        "FMATRIX": "data/FChr12a.txt",
+        "POPULATION_SIZE": 100,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": false
+    },
+
+
+    {
+        "NAMETEST": "chr12a_mutation_01",
+        "DMATRIX": "data/DChr12a.txt",
+        "FMATRIX": "data/FChr12a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.5,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "chr12a_mutation_05",
+        "DMATRIX": "data/DChr12a.txt",
+        "FMATRIX": "data/FChr12a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+
+    {
+        "NAMETEST": "chr12a_generations_10",
+        "DMATRIX": "data/DChr12a.txt",
+        "FMATRIX": "data/FChr12a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+    {
+        "NAMETEST": "chr12a_generations_40",
+        "DMATRIX": "data/DChr12a.txt",
+        "FMATRIX": "data/FChr12a.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 40,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
     }
 ]

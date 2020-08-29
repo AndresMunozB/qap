@@ -37,7 +37,7 @@ tournament_times = 50
 reproduction_times = 50 
 mutation_probability = 0.2
 
-config = test.load_json('config/chr12a_ga')
+"""config = test.load_json('config/chr12a_ga')
 d = np.loadtxt(config['DMATRIX'])
 f = np.loadtxt(config['FMATRIX'])
 best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time = ga.evolutive_algorithm(population_size, 
@@ -47,10 +47,19 @@ best_objective_list, average_objectives_list, best_solution, best_objective, ela
                                             config['REPRODUCTION_TIMES'], 
                                             config['MUTATION_PROBABILITY'], 
                                             config['DEBUG'],
-                                            d, f)
+                                            d, f)"""
 
-#iterations = 30
-#test.run_tests_sa("test/test_chr12a",iterations)
-#test.run_tests_sa("test/test_kra32",iterations)
-#test.run_tests_sa("test/test_esc64a",iterations)
+#TESTS
+
+iterations = 30
+#test.run_tests_ga("test/test_ga_chr12a",30)
+#test.run_tests_ga("test/test_ga_esc64a",30)
+#test.run_tests_ga("test/test_ga_chr12a",30)
+#test.run_tests_sa("test/test_sa_chr12a",iterations)
+#test.run_tests_sa("test/test_sa_kra32",iterations)
+test.run_tests_sa("test/test_sa_esc64a",iterations)
+
+
+
+
 

@@ -1,0 +1,91 @@
+[
+    {
+        "NAMETEST": "kra32_base",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": false
+    },
+
+
+    {
+        "NAMETEST": "kra32_population_25",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 25,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "kra32_population_100",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 100,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": false
+    },
+
+
+    {
+        "NAMETEST": "kra32_mutation_01",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.5,
+        "DEBUG": false
+    },
+    {
+        "NAMETEST": "kra32_mutation_05",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+
+    {
+        "NAMETEST": "kra32_generations_10",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 20,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    },
+    {
+        "NAMETEST": "kra32_generations_40",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "POPULATION_SIZE": 50,
+        "GENERATIONS": 40,
+        "TOURNAMENT_SIZE": 20,
+        "TOURNAMENT_TIMES": 50,
+        "REPRODUCTION_TIMES": 50,
+        "MUTATION_PROBABILITY": 0.2,
+        "DEBUG": true
+    }
+]

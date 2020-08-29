@@ -36,6 +36,12 @@ f = np.loadtxt('data/FChr12a.txt')
 size_population = 12
 size_solution = 12
 population = ga.generate_population(size_population,size_solution)
+new_population = ga.tournament_selection(5, 10, population, d, f)
 
-print(new_population)
+print(new_population[0])
+print(new_population[1])
+#mutation = ga.mutation(new_population[0], 0.8)
+offspring1, offspring2 = ga.order_one_crossover(new_population[0], new_population[1])
 
+print(offspring1)
+print(offspring2)

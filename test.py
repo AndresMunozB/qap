@@ -15,14 +15,14 @@ def save_results(data,name_file):
         json.dump(data, json_file, indent=4)
     return True
 
-def results_sa_to_json(objetives_list, best_objetives_list, probabilities_list, temperature_list, best_objetive, best_solution, elapsed_time,neighbors):
+def results_sa_to_json(objective_list, best_objective_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time,neighbors):
     data = {
         'elapsed_time': elapsed_time,
-        'best_objetive': best_objetive,
+        'best_objective': best_objective,
         'neighbors': neighbors,
         'best_solution': best_solution,
-        'objetives_list': objetives_list,
-        'best_objetives_list': best_objetives_list,
+        'objective_list': objective_list,
+        'best_objective_list': best_objective_list,
         'temperature_list': temperature_list,
         'probabilities_list': probabilities_list
     }
@@ -44,7 +44,7 @@ def run_tests_sa(name_test, iterations):
     
     for test in tests:
         name_test = test['NAMETEST']
-        print(f'   test ({count_test}/{len(tests)}) {name_test} iniciado. ' )
+        print(f'   test ({count_test}/{len(tests)}) {name_test} started. ' )
         for i in range(1,iterations+1):
             print(f'      ({i}/{iterations}) running test {name_test} ...')
             d = np.loadtxt(test['DMATRIX'])
@@ -61,7 +61,7 @@ def run_tests_sa(name_test, iterations):
             results_json = results_sa_to_json(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time, neighbors)
             iteration_str = str(i).zfill(3)
             save_results(results_json,f'result/{name_test}_sa_{iteration_str}.json')
-        print(f'   test ({count_test}/{len(tests)}) {name_test} finalizado. ' )
+        print(f'   test ({count_test}/{len(tests)}) {name_test} finished. ' )
         count_test += 1
 
 def run_tests_ga(name_test,iterations):
@@ -69,7 +69,7 @@ def run_tests_ga(name_test,iterations):
     count_test = 1
     for test in tests:
         name_test = test['NAMETEST']
-        print(f'   test ({count_test}/{len(tests)}) {name_test} iniciado. ' )
+        print(f'   test ({count_test}/{len(tests)}) {name_test} started. ' )
         for i in range(1,iterations+1):
             print(f'      ({i}/{iterations}) running test {name_test} ...')
             d = np.loadtxt(test['DMATRIX'])
@@ -86,7 +86,7 @@ def run_tests_ga(name_test,iterations):
             results_json = results_ga_to_json(best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time, neighbors)
             iteration_str = str(i).zfill(3)
             save_results(results_json,f'result/{name_test}_ga_{iteration_str}.json')
-        print(f'   test ({count_test}/{len(tests)}) {name_test} finalizado. ' )
+        print(f'   test ({count_test}/{len(tests)}) {name_test} finished. ' )
         count_test += 1
 
 

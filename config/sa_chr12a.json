@@ -1,0 +1,12 @@
+{
+    "NAMETEST": "chr12a",
+    "DMATRIX": "data/DChr12a.txt",
+    "FMATRIX": "data/FChr12a.txt",
+    "INITIAL_TEMPERATURE": 396520 ,
+    "FINAL_TEMPERATURE": 0.1,
+    "MAX_ITERATIONS": 50,
+    "COOLING_MODE": "GEO",
+    "ALPHA": 0.95,
+    "BETA": 1000,
+    "DEBUG": false
+}

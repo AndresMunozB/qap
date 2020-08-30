@@ -1,67 +1,45 @@
 import numpy as np
-import test
+import test 
 import ga 
-"""
-import sa
-initial_temperature = 2000
-final_temperature = 0.01
-max_iterations = 1000
-cooling_mode = 'LIN'
-alpha = 0.85
-beta = 1
-debug = True
-
-d = np.loadtxt('data/DChr12a.txt')
-f = np.loadtxt('data/FChr12a.txt')
-objetives_list, best_objetives_list, probabilities_list, best_objetive = sa.simulated_annealing(initial_temperature,
-                        final_temperature, 
-                        max_iterations, 
-                        cooling_mode, 
-                        alpha,
-                        beta, 
-                        debug, 
-                        d, 
-                        f)
+import sa 
 
 
-sa.graph(objetives_list, best_objetives_list, probabilities_list, best_objetive)
-sa.plt.show()"""
-
-
-
-
-population_size =  50
-generations =  20
-tournament_size = 30
-tournament_times = 50
-reproduction_times = 50 
-mutation_probability = 0.2
-
-"""config = test.load_json('config/chr12a_ga')
+"""name_json = "config/ga_esc64a"
+config = test.load_json(name_json)
 d = np.loadtxt(config['DMATRIX'])
 f = np.loadtxt(config['FMATRIX'])
-best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time = ga.evolutive_algorithm(population_size, 
-                                            config['GENERATIONS'], 
-                                            config['TOURNAMENT_SIZE'], 
-                                            config['TOURNAMENT_TIMES'],
-                                            config['REPRODUCTION_TIMES'], 
-                                            config['MUTATION_PROBABILITY'], 
-                                            config['DEBUG'],
-                                            d, f)"""
+best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time, neighbors = ga.evolutive_algorithm(config['POPULATION_SIZE'], 
+                                                                                        config['GENERATIONS'], 
+                                                                                        config['TOURNAMENT_SIZE'], 
+                                                                                        config['TOURNAMENT_TIMES'],
+                                                                                        config['REPRODUCTION_TIMES'], 
+                                                                                        config['MUTATION_PROBABILITY'], 
+                                                                                        config['DEBUG'],
+                                                                                        config['SAME_BEST'],
+                                                                                        d, f)
+ga.graph(best_objective_list, average_objectives_list,best_objective, elapsed_time)
+print(f"time: {elapsed_time} - neighbors: {neighbors} - best_objective: {best_objective}")"""
 
-#TESTS
+"""
+name_json = "config/sa_chr12a"
+config = test.load_json(name_json)
+d = np.loadtxt(config['DMATRIX'])
+f = np.loadtxt(config['FMATRIX'])
+objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time, neighbors = sa.simulated_annealing(config['INITIAL_TEMPERATURE'], 
+                                                                                            config['FINAL_TEMPERATURE'], 
+                                                                                            config['MAX_ITERATIONS'], 
+                                                                                            config['COOLING_MODE'], 
+                                                                                            config['ALPHA'], 
+                                                                                            config['BETA'],
+                                                                                            config['DEBUG'], 
+                                                                                            d,
+                                                                                            f)
+print(f"time: {elapsed_time} - neighbors: {neighbors} - best_objective:{best_objective}")
+sa.graph(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, elapsed_time)"""
 
-iterations = 30
-#EVOLUTIVE ALGORITHM
-test.run_tests_ga("test/test_ga_chr12a",iterations)
-test.run_tests_ga("test/test_ga_kra32",iterations)
-test.run_tests_ga("test/test_ga_esc64a",iterations)
-
-
-#SIMULATED ANNEALING
-#test.run_tests_sa("test/test_sa_chr12a",iterations)
-#test.run_tests_sa("test/test_sa_kra32",iterations)
-#test.run_tests_sa("test/test_sa_esc64a",iterations)
+test.run_tests_ga("test/test_ga_esc64a",30)
+test.run_tests_ga("test/test_sa",30)
+test.run_tests_ga("test/test_ga",30)
 
 
 

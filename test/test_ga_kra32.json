@@ -9,6 +9,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
+        "SAME_BEST": -1,
         "DEBUG": false
     },
 
@@ -23,6 +24,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
+        "SAME_BEST": -1,
         "DEBUG": false
     },
     {
@@ -35,6 +37,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
+        "SAME_BEST": -1,
         "DEBUG": false
     },
 
@@ -49,6 +52,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.1,
+        "SAME_BEST": -1,
         "DEBUG": false
     },
     {
@@ -61,6 +65,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.5,
+        "SAME_BEST": -1,
         "DEBUG": false
     },
 
@@ -74,6 +79,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
+        "SAME_BEST": -1,
         "DEBUG": false
     },
     {
@@ -86,6 +92,7 @@
         "TOURNAMENT_TIMES": 50,
         "REPRODUCTION_TIMES": 50,
         "MUTATION_PROBABILITY": 0.2,
+        "SAME_BEST": -1,
         "DEBUG": false
     }
 ]

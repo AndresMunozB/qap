@@ -1,7 +1,7 @@
 {
-    "NAMETEST": "chr12a_base",
-    "DMATRIX": "data/DChr12a.txt",
-    "FMATRIX": "data/FChr12a.txt",
+    "NAMETEST": "kra32_base",
+    "DMATRIX": "data/DKra32.txt",
+    "FMATRIX": "data/FKra32.txt",
     "POPULATION_SIZE": 50,
     "GENERATIONS": 20,
     "TOURNAMENT_SIZE": 20,

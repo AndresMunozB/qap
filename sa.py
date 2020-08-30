@@ -40,7 +40,7 @@ def simulated_annealing(initial_temperature,
     best_objectives_list =  [current_objective]
     probabilities_list = []
     temperature_list = [current_temperature]
-
+    neighbors = 0
     while current_temperature > final_temperature:
         i = 0
         while i < max_iterations:
@@ -65,24 +65,32 @@ def simulated_annealing(initial_temperature,
             best_objectives_list.append(best_objective)
             objectives_list.append(current_objective)
             temperature_list.append(current_temperature) 
+            neighbors+=1
         current_temperature = cooling(current_temperature,initial_temperature,cooling_mode,i, alpha, beta)
+        
     elapsed_time = time() - start_time
-    return objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time
+    return objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, best_solution, elapsed_time, neighbors
 
-def graph(objetives_list, best_objetives_list, probabilities_list, best_objetive):
-    plt.figure(1)
-    plt.subplot(3, 1, 1)
-    graficoMejores = plt.plot(best_objetives_list)
+def graph(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, elapsed_time):
+    plt.figure(figsize=(10,8))
+    plt.subplot(4, 1, 1)
+    graficoMejores = plt.plot(best_objectives_list)
     plt.setp(graficoMejores,"linestyle","none","marker","s","color","b","markersize","1")
-    plt.title(u"Simulated annealing TSP") 
+    plt.title(u"Simulated annealing QAP") 
     plt.ylabel(u"Mejor valor")
-    plt.subplot(3, 1, 2)
-    grafico = plt.plot(objetives_list)
+    plt.subplot(4, 1, 2)
+    grafico = plt.plot(objectives_list)
     plt.setp(grafico,"linestyle","none","marker","s","color","r","markersize","1")
     plt.ylabel(u"Valor actual")
-    plt.subplot(3, 1, 3)
+    plt.subplot(4, 1, 3)
+    grafico = plt.plot(temperature_list)
+    plt.setp(grafico,"linestyle","none","marker","s","color","black","markersize","1")
+    plt.ylabel(u"Temperatura")
+    plt.subplot(4, 1, 4)
     grafico = plt.plot(probabilities_list)
     plt.setp(grafico,"linestyle","none","marker","s","color","g","markersize","1")
     plt.ylabel(u"Probabilidad")
-    plt.xlabel(u"Valor óptimo : " + str(best_objetive))
+    plt.xlabel(f"Valor óptimo:{best_objective} - Tiempo:{elapsed_time}")
+    
+    plt.show()
     return True

@@ -1,0 +1,13 @@
+{
+    "NAMETEST": "chr12a_base",
+    "DMATRIX": "data/DChr12a.txt",
+    "FMATRIX": "data/FChr12a.txt",
+    "POPULATION_SIZE": 50,
+    "GENERATIONS": 148,
+    "TOURNAMENT_SIZE": 20,
+    "TOURNAMENT_TIMES": 50,
+    "REPRODUCTION_TIMES": 50,
+    "MUTATION_PROBABILITY": 0.2,
+    "SAME_BEST": -1,
+    "DEBUG": true
+}

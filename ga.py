@@ -1,6 +1,7 @@
 import qap
 from random import shuffle, randint, random
 from time import time
+import matplotlib.pyplot as plt
 def generate_population(population_size, size_solution):
     population = []
     while population_size >= 0:
@@ -116,6 +117,7 @@ def evolutive_algorithm(population_size,
                         reproduction_times,
                         mutation_probability,
                         debug,
+                        same_best,
                         d, f):
     start_time = time()
     population = generate_population(population_size, d.shape[0])
@@ -126,8 +128,8 @@ def evolutive_algorithm(population_size,
     #memory
     average_objectives_list = [average_objective(population,d,f)]
     best_objective_list =  [best_objective]
-
-
+    counter = 0
+    neighbors = 0
     for i in range(generations):
         new_population = tournament_selection(tournament_size,tournament_times,population,d,f) #tournament_time deberia ser 50
         new_population = reproduction(new_population,reproduction_times) # si reproduction_times es 25 entonces new_population es 50
@@ -143,12 +145,34 @@ def evolutive_algorithm(population_size,
         if candidate_objective < best_objective:
             best_solution = candidate_solution
             best_objective = candidate_objective
-        
+            counter = 0
+
+        else:
+            counter+=1
+        if same_best != -1:
+            if same_best == counter:
+                break 
         average_objectives_list.append(average_objective(population,d,f))
         best_objective_list.append(best_objective)
+        neighbors+=reproduction_times*2
 
     elapsed_time = time() - start_time
-    return best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time
+    return best_objective_list, average_objectives_list, best_solution, best_objective, elapsed_time, neighbors
 
 
 
+def graph(average_objectives_list, best_objectives_list, best_objective, elapsed_time):
+    plt.figure(figsize=(10,8))
+    plt.subplot(2, 1, 1)
+    graficoMejores = plt.plot(best_objectives_list)
+    plt.setp(graficoMejores,"linestyle","none","marker","s","color","b","markersize","1")
+    plt.title(u"Simulated annealing QAP") 
+    plt.ylabel(u"Mejor valor")
+    plt.subplot(2, 1, 2)
+    grafico = plt.plot(average_objectives_list)
+    plt.setp(grafico,"linestyle","none","marker","s","color","r","markersize","1")
+    plt.ylabel(u"Valor promedio")
+    plt.xlabel(f"Valor óptimo:{best_objective} - Tiempo:{elapsed_time}")
+    
+    plt.show()
+    return True

@@ -37,9 +37,9 @@ objectives_list, best_objectives_list, probabilities_list, temperature_list, bes
 print(f"time: {elapsed_time} - neighbors: {neighbors} - best_objective:{best_objective}")
 sa.graph(objectives_list, best_objectives_list, probabilities_list, temperature_list, best_objective, elapsed_time)"""
 
-test.run_tests_ga("test/test_ga_esc64a",30)
 test.run_tests_ga("test/test_sa",30)
 test.run_tests_ga("test/test_ga",30)
+test.run_tests_ga("test/test_ga_esc64a",30)
 
 
 

@@ -12,10 +12,10 @@
         "DEBUG": false
     },
     {
-        "NAMETEST": "esc64_best",
-        "DMATRIX": "data/Desc64a.txt",
-        "FMATRIX": "data/Fesc64a.txt",
-        "INITIAL_TEMPERATURE": 3000 ,
+        "NAMETEST": "kra32_best",
+        "DMATRIX": "data/DKra32.txt",
+        "FMATRIX": "data/FKra32.txt",
+        "INITIAL_TEMPERATURE": 1500000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 50,
         "COOLING_MODE": "GEO",
@@ -24,10 +24,10 @@
         "DEBUG": false
     },
     {
-        "NAMETEST": "kra32_best",
-        "DMATRIX": "data/DKra32.txt",
-        "FMATRIX": "data/FKra32.txt",
-        "INITIAL_TEMPERATURE": 1500000 ,
+        "NAMETEST": "esc64a_best",
+        "DMATRIX": "data/Desc64a.txt",
+        "FMATRIX": "data/Fesc64a.txt",
+        "INITIAL_TEMPERATURE": 3000 ,
         "FINAL_TEMPERATURE": 0.1,
         "MAX_ITERATIONS": 50,
         "COOLING_MODE": "GEO",

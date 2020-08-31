@@ -39,7 +39,7 @@ sa.graph(objectives_list, best_objectives_list, probabilities_list, temperature_
 
 test.run_tests_sa("test/test_sa",30)
 test.run_tests_ga("test/test_ga",30)
-test.run_tests_ga("test/test_ga_esc64a",30)
+#test.run_tests_ga("test/test_ga_esc64a",30)
 
 
 
